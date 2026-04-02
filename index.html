@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>朱琳 | 个人主页</title>
     <style>
         * {
@@ -13,8 +13,8 @@
 
         body {
             font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
-            background: linear-gradient(135deg, #f6f8fc, #eef2f7);
-            color: #1f2937;
+            background: linear-gradient(135deg, #f8f4ff, #efe7ff, #fdfaff);
+            color: #3d2c5a;
             line-height: 1.8;
         }
 
@@ -25,12 +25,43 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            background: linear-gradient(135deg, #7b4dff, #a855f7, #c084fc);
             color: white;
-            border-radius: 24px;
-            padding: 60px 40px;
+            border-radius: 28px;
+            padding: 60px 30px;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.25);
+            box-shadow: 0 18px 40px rgba(140, 82, 255, 0.28);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .hero::before {
+            width: 180px;
+            height: 180px;
+            top: -50px;
+            left: -40px;
+        }
+
+        .hero::after {
+            width: 220px;
+            height: 220px;
+            bottom: -80px;
+            right: -50px;
+        }
+
+        .hero .icon {
+            font-size: 46px;
+            margin-bottom: 12px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
         }
 
         .hero h1 {
@@ -41,69 +72,81 @@
 
         .hero p {
             font-size: 18px;
-            opacity: 0.95;
+            opacity: 0.96;
         }
 
-        .section {
-            background: rgba(255, 255, 255, 0.9);
-            margin-top: 28px;
-            padding: 32px;
-            border-radius: 20px;
-            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
-            backdrop-filter: blur(8px);
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            margin-top: 24px;
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 10px 28px rgba(102, 51, 153, 0.08);
+            backdrop-filter: blur(6px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(168, 85, 247, 0.08);
         }
 
-        .section:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 14px 30px rgba(15, 23, 42, 0.12);
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 34px rgba(102, 51, 153, 0.13);
         }
 
-        .section h2 {
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             font-size: 24px;
+            color: #7b4dff;
             margin-bottom: 16px;
-            color: #2563eb;
-            border-left: 5px solid #2563eb;
-            padding-left: 12px;
+            font-weight: bold;
+        }
+
+        .section-title span {
+            font-size: 24px;
         }
 
         .about p {
             font-size: 17px;
-            color: #374151;
+            color: #4b3a68;
         }
 
-        .interest-list {
+        .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 14px;
             list-style: none;
-            margin-top: 10px;
+            margin-top: 12px;
         }
 
-        .interest-list li {
-            background: linear-gradient(135deg, #dbeafe, #eff6ff);
-            color: #1d4ed8;
+        .tags li {
+            background: linear-gradient(135deg, #f3e8ff, #ede9fe);
+            color: #7c3aed;
             padding: 12px 18px;
             border-radius: 999px;
             font-weight: 600;
-            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.08);
+            box-shadow: 0 6px 14px rgba(168, 85, 247, 0.12);
+            transition: all 0.3s ease;
+        }
+
+        .tags li:hover {
+            transform: scale(1.06);
+            background: linear-gradient(135deg, #e9d5ff, #ddd6fe);
         }
 
         .contact-box {
-            background: #f8fafc;
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
+            background: linear-gradient(135deg, #fcfaff, #f7f0ff);
+            border: 1px solid #eadcff;
+            border-radius: 18px;
             padding: 20px;
-            margin-top: 12px;
         }
 
         .contact-box p {
             font-size: 16px;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
         .contact-box a {
-            color: #2563eb;
+            color: #9333ea;
             text-decoration: none;
             font-weight: 600;
         }
@@ -114,14 +157,20 @@
 
         .footer {
             text-align: center;
-            margin: 30px 0 10px;
-            color: #6b7280;
+            margin: 28px 0 10px;
+            color: #7a6a96;
             font-size: 14px;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
         }
 
         @media (max-width: 768px) {
             .hero {
-                padding: 45px 24px;
+                padding: 46px 20px;
             }
 
             .hero h1 {
@@ -132,12 +181,12 @@
                 font-size: 16px;
             }
 
-            .section {
-                padding: 24px;
+            .card {
+                padding: 22px;
             }
 
-            .section h2 {
-                font-size: 22px;
+            .section-title {
+                font-size: 21px;
             }
         }
     </style>
@@ -145,35 +194,45 @@
 <body>
     <div class="container">
         <section class="hero">
+            <div class="icon">💜</div>
             <h1>你好，我是朱琳</h1>
-            <p>工业设计工程专业学生 ｜ 热爱设计、技术与创新</p>
+            <p>🎨 工业设计工程专业学生 ｜ 热爱设计、创意与科技</p>
         </section>
 
-        <section class="section about">
-            <h2>关于我</h2>
+        <section class="card about">
+            <div class="section-title">
+                <span>🌸</span>
+                <h2>关于我</h2>
+            </div>
             <p>
                 大家好，我是朱琳，一名工业设计工程专业学生。
-                我对设计思维、产品创新和数字技术充满兴趣，喜欢在创意与实践中不断探索，
-                希望通过设计让生活变得更加美好。
+                我喜欢把创意、设计与技术结合起来，关注产品体验、视觉表达与创新思维。
+                希望通过不断学习和实践，设计出更有温度、更有趣的作品。
             </p>
         </section>
 
-        <section class="section">
-            <h2>我的兴趣</h2>
-            <ul class="interest-list">
-                <li>人工智能</li>
-                <li>编程开发</li>
-                <li>阅读写作</li>
-                <li>产品设计</li>
-                <li>创意思维</li>
+        <section class="card">
+            <div class="section-title">
+                <span>✨</span>
+                <h2>我的兴趣</h2>
+            </div>
+            <ul class="tags">
+                <li>🤖 人工智能</li>
+                <li>💻 编程开发</li>
+                <li>📚 阅读写作</li>
+                <li>🎨 产品设计</li>
+                <li>🌈 创意思维</li>
             </ul>
         </section>
 
-        <section class="section">
-            <h2>联系方式</h2>
+        <section class="card">
+            <div class="section-title">
+                <span>📮</span>
+                <h2>联系方式</h2>
+            </div>
             <div class="contact-box">
-                <p>欢迎和我交流学习、设计与技术相关的话题。</p>
-                <p>邮箱：<a href="mailto:2651281672@qq.com">2651281672@qq.com</a></p>
+                <p>很高兴认识你，欢迎和我交流设计、学习和技术相关内容。</p>
+                <p>📧 邮箱：<a href="mailto:2651281672@qq.com">2651281672@qq.com</a></p>
             </div>
         </section>
 
