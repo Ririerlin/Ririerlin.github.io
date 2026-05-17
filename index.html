@@ -3,26 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>朱琳｜个人网站</title>
+  <title>朱琳｜工业设计个人网站</title>
+
   <style>
     :root {
-      --bg: #f7f4ff;
-      --bg-soft: #fcfbff;
-      --card: rgba(255, 255, 255, 0.78);
-      --card-solid: #ffffff;
-      --text: #221b38;
-      --text-light: #6d6487;
-      --line: rgba(126, 87, 194, 0.12);
-      --primary: #7c4dff;
-      --primary-deep: #6236e8;
-      --primary-soft: #efe7ff;
-      --accent: #d9c8ff;
-      --shadow: 0 20px 60px rgba(90, 56, 168, 0.12);
-      --radius-xl: 30px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --radius-sm: 12px;
-      --max-width: 1200px;
+      --black: #14111f;
+      --text: #241b38;
+      --gray: #6d667c;
+      --light-gray: #f7f3ff;
+      --white: #ffffff;
+
+      --purple: #7c3cff;
+      --purple-dark: #5f25df;
+      --purple-soft: #efe7ff;
+      --purple-light: #f8f4ff;
+      --lavender: #c9b6ff;
+      --pink: #f3d7ff;
+      --mint: #dffaf3;
+
+      --shadow: 0 24px 80px rgba(91, 52, 168, 0.14);
+      --shadow-soft: 0 16px 50px rgba(74, 45, 135, 0.08);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+
+      --max: 1180px;
     }
 
     * {
@@ -37,1075 +42,1613 @@
 
     body {
       font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(170, 128, 255, 0.15), transparent 28%),
-        radial-gradient(circle at top right, rgba(124, 77, 255, 0.12), transparent 22%),
-        linear-gradient(180deg, #f9f7ff 0%, #f6f2ff 45%, #fcfbff 100%);
       color: var(--text);
+      background:
+        radial-gradient(circle at 12% 15%, rgba(124, 60, 255, 0.14), transparent 28%),
+        radial-gradient(circle at 90% 18%, rgba(201, 182, 255, 0.22), transparent 26%),
+        radial-gradient(circle at 50% 70%, rgba(243, 215, 255, 0.22), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #fbf8ff 45%, #ffffff 100%);
       line-height: 1.75;
+      overflow-x: hidden;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .container {
-      width: min(92%, var(--max-width));
+      width: min(92%, var(--max));
       margin: 0 auto;
     }
 
-    .blur-ball {
+    .decor {
       position: fixed;
-      border-radius: 50%;
-      filter: blur(60px);
       z-index: -1;
-      opacity: 0.5;
+      border-radius: 50%;
+      filter: blur(65px);
+      opacity: 0.58;
     }
 
-    .ball-1 {
-      width: 220px;
-      height: 220px;
-      background: rgba(153, 102, 255, 0.25);
-      top: 80px;
-      left: -40px;
+    .decor-1 {
+      width: 260px;
+      height: 260px;
+      background: rgba(124, 60, 255, 0.18);
+      left: -80px;
+      top: 120px;
     }
 
-    .ball-2 {
-      width: 280px;
-      height: 280px;
-      background: rgba(203, 174, 255, 0.25);
-      right: -70px;
-      top: 320px;
+    .decor-2 {
+      width: 320px;
+      height: 320px;
+      background: rgba(205, 179, 255, 0.25);
+      right: -120px;
+      top: 420px;
     }
 
-    .ball-3 {
-      width: 240px;
-      height: 240px;
-      background: rgba(124, 77, 255, 0.18);
-      bottom: 60px;
-      left: 10%;
+    .decor-3 {
+      width: 260px;
+      height: 260px;
+      background: rgba(243, 215, 255, 0.34);
+      left: 32%;
+      bottom: 100px;
     }
 
     /* 顶部导航 */
-    .navbar-wrap {
+    .nav-wrap {
       position: sticky;
       top: 18px;
       z-index: 50;
-      padding-top: 18px;
+      padding: 18px 0 0;
     }
 
-    .navbar {
-      width: min(94%, 1180px);
+    .nav {
+      width: min(92%, var(--max));
       margin: 0 auto;
-      background: rgba(255, 255, 255, 0.72);
-      border: 1px solid rgba(124, 77, 255, 0.10);
-      backdrop-filter: blur(14px);
-      box-shadow: 0 12px 40px rgba(92, 70, 145, 0.10);
+      height: 72px;
       border-radius: 999px;
-      padding: 12px 18px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(124, 60, 255, 0.10);
+      box-shadow: 0 16px 48px rgba(56, 34, 105, 0.08);
+      backdrop-filter: blur(18px);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      padding: 0 18px 0 20px;
     }
 
-    .brand {
+    .logo {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: bold;
-      color: var(--text);
+      font-weight: 900;
+      letter-spacing: 0.5px;
     }
 
-    .brand-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #7c4dff, #ad7bff);
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--black);
       color: white;
-      font-size: 18px;
-      box-shadow: 0 12px 25px rgba(124, 77, 255, 0.28);
+      display: grid;
+      place-items: center;
+      font-size: 20px;
+      box-shadow: 0 14px 32px rgba(20, 17, 31, 0.18);
     }
 
-    .brand-text small {
+    .logo-text span {
       display: block;
-      font-size: 12px;
-      color: var(--text-light);
-      font-weight: normal;
-      margin-top: -2px;
+      font-size: 13px;
+      color: var(--gray);
+      font-weight: 500;
+      margin-top: -4px;
     }
 
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       gap: 10px;
     }
 
     .nav-links a {
       padding: 10px 16px;
       border-radius: 999px;
-      color: #44395f;
-      font-weight: 600;
-      transition: all 0.25s ease;
+      color: #3b314f;
+      font-weight: 800;
       font-size: 15px;
+      transition: 0.25s ease;
     }
 
     .nav-links a:hover {
-      background: var(--primary-soft);
-      color: var(--primary-deep);
+      background: var(--purple-soft);
+      color: var(--purple-dark);
     }
 
-    .nav-btn {
-      background: linear-gradient(135deg, #7c4dff, #a66cff);
-      color: #fff !important;
-      box-shadow: 0 10px 24px rgba(124, 77, 255, 0.28);
+    .nav-links .active {
+      background: var(--black);
+      color: white;
+      box-shadow: 0 12px 26px rgba(20, 17, 31, 0.18);
     }
 
-    /* hero */
+    /* 首页 */
     .hero {
-      padding: 72px 0 34px;
+      padding: 78px 0 54px;
+      min-height: calc(100vh - 90px);
+      display: flex;
+      align-items: center;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 28px;
+      grid-template-columns: 1.04fr 0.96fr;
       align-items: center;
+      gap: 40px;
     }
 
-    .hero-left {
-      padding-top: 28px;
-    }
-
-    .eyebrow {
+    .hello {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(124, 77, 255, 0.1);
+      padding: 9px 15px;
+      border: 1px solid rgba(124, 60, 255, 0.12);
       border-radius: 999px;
-      padding: 10px 16px;
-      color: var(--primary-deep);
-      font-weight: 700;
-      margin-bottom: 22px;
-      box-shadow: 0 8px 24px rgba(90, 56, 168, 0.08);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--purple-dark);
+      font-weight: 900;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 24px;
     }
 
-    .eyebrow-dot {
+    .hello-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #7c4dff, #be9fff);
+      background: linear-gradient(135deg, var(--purple), var(--pink));
+      box-shadow: 0 0 0 6px rgba(124, 60, 255, 0.08);
     }
 
-    .hero-title {
-      font-size: clamp(38px, 6vw, 72px);
-      line-height: 1.08;
-      font-weight: 900;
-      letter-spacing: -1px;
-      margin-bottom: 14px;
+    .hero h1 {
+      font-size: clamp(48px, 7.5vw, 92px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      font-weight: 950;
+      color: #08050f;
+      margin-bottom: 20px;
     }
 
-    .hero-title .highlight {
-      background: linear-gradient(135deg, #7c4dff 0%, #ac73ff 65%, #caa9ff 100%);
+    .gradient-text {
+      background: linear-gradient(135deg, #5f25df 0%, #8e5cff 46%, #cf9fff 100%);
       -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       background-clip: text;
+      color: transparent;
     }
 
-    .hero-subtitle {
-      font-size: clamp(18px, 2.4vw, 26px);
-      color: #7d5bd4;
-      font-weight: 700;
+    .hero-role {
+      font-size: clamp(24px, 3.3vw, 42px);
+      color: var(--purple);
+      font-weight: 850;
       margin-bottom: 20px;
     }
 
     .hero-desc {
-      max-width: 620px;
-      color: var(--text-light);
+      max-width: 660px;
+      color: var(--gray);
       font-size: 17px;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
     .hero-actions {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 9px;
       padding: 14px 24px;
       border-radius: 999px;
-      font-weight: 700;
-      transition: all 0.25s ease;
+      font-weight: 900;
+      transition: 0.25s ease;
       border: 1px solid transparent;
+      cursor: pointer;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, #7c4dff, #a66cff);
+    .btn-dark {
+      background: var(--black);
       color: white;
-      box-shadow: 0 14px 30px rgba(124, 77, 255, 0.22);
+      box-shadow: 0 16px 34px rgba(20, 17, 31, 0.18);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
+    .btn-dark:hover,
+    .btn-purple:hover,
+    .btn-light:hover {
+      transform: translateY(-3px);
     }
 
-    .btn-outline {
-      background: rgba(255,255,255,0.72);
-      border-color: rgba(124, 77, 255, 0.14);
+    .btn-purple {
+      background: linear-gradient(135deg, var(--purple), #a575ff);
+      color: white;
+      box-shadow: 0 18px 34px rgba(124, 60, 255, 0.24);
+    }
+
+    .btn-light {
+      background: rgba(255, 255, 255, 0.76);
+      border-color: rgba(124, 60, 255, 0.15);
       color: var(--text);
+      box-shadow: var(--shadow-soft);
     }
 
-    .btn-outline:hover {
-      background: #fff;
-      transform: translateY(-2px);
-    }
-
-    .hero-tags {
+    .mini-tags {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
     }
 
-    .tag {
+    .mini-tags span {
       padding: 10px 14px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.8);
-      border: 1px solid rgba(124, 77, 255, 0.09);
-      color: #5e5080;
-      font-weight: 600;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(124, 60, 255, 0.10);
+      color: #5d5275;
+      font-weight: 750;
       font-size: 14px;
-      box-shadow: 0 8px 20px rgba(90, 56, 168, 0.06);
+      box-shadow: 0 10px 26px rgba(56, 34, 105, 0.06);
     }
 
-    .hero-right {
+    .hero-visual {
       position: relative;
+      min-height: 560px;
+      display: grid;
+      place-items: center;
     }
 
-    .photo-card {
+    .portrait-shell {
       position: relative;
-      background: linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.65));
-      border: 1px solid rgba(124, 77, 255, 0.10);
-      border-radius: 34px;
-      padding: 26px;
-      backdrop-filter: blur(12px);
-      box-shadow: var(--shadow);
-      overflow: hidden;
+      width: min(92%, 430px);
+      aspect-ratio: 0.78 / 1;
+      border-radius: 42px;
+      background:
+        linear-gradient(160deg, rgba(124, 60, 255, 0.95), rgba(205, 179, 255, 0.65)),
+        linear-gradient(#fff, #fff);
+      padding: 8px;
+      box-shadow: 0 34px 90px rgba(91, 52, 168, 0.24);
+      transform: rotate(2deg);
     }
 
-    .photo-card::before {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(124,77,255,0.26), transparent 68%);
-      top: -30px;
-      right: -40px;
-    }
-
-    .photo-frame {
+    .portrait-inner {
       position: relative;
-      border-radius: 28px;
-      background: linear-gradient(135deg, #7c4dff, #c49bff);
-      padding: 6px;
-      box-shadow: 0 24px 50px rgba(103, 54, 203, 0.20);
-    }
-
-    .photo-frame img {
       width: 100%;
-      aspect-ratio: 4 / 5;
+      height: 100%;
+      border-radius: 35px;
+      overflow: hidden;
+      background: #f2ecff;
+    }
+
+    .portrait-inner img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center top;
-      border-radius: 24px;
-      background: #f3edff;
+      filter: saturate(1.04) contrast(1.02);
     }
 
-    .float-card {
+    .portrait-glow {
       position: absolute;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(124,77,255,0.12);
-      border-radius: 18px;
-      box-shadow: 0 16px 32px rgba(90, 56, 168, 0.12);
-      padding: 14px 16px;
-      min-width: 150px;
+      inset: -22px;
+      border-radius: 56px;
+      border: 2px solid rgba(124, 60, 255, 0.16);
+      transform: rotate(-5deg);
+      pointer-events: none;
     }
 
-    .float-card strong {
+    .floating {
+      position: absolute;
+      padding: 16px 18px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.84);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(124, 60, 255, 0.12);
+      box-shadow: 0 20px 48px rgba(56, 34, 105, 0.12);
+    }
+
+    .floating strong {
       display: block;
+      font-size: 18px;
       color: var(--text);
-      font-size: 16px;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
-    .float-card span {
-      color: var(--text-light);
+    .floating span {
+      color: var(--gray);
       font-size: 13px;
     }
 
-    .float-1 {
-      left: -18px;
-      bottom: 110px;
+    .float-a {
+      top: 54px;
+      left: 4px;
     }
 
-    .float-2 {
-      right: -12px;
-      top: 46px;
+    .float-b {
+      right: -2px;
+      bottom: 112px;
+    }
+
+    .float-c {
+      left: 34px;
+      bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .score {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--purple), #b58cff);
+      color: white;
+      font-weight: 950;
+      box-shadow: 0 14px 28px rgba(124, 60, 255, 0.24);
     }
 
     /* 通用 section */
-    .section {
-      padding: 42px 0;
+    section.block {
+      padding: 70px 0;
     }
 
     .section-head {
+      margin-bottom: 30px;
       display: flex;
-      align-items: end;
       justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 24px;
+      align-items: flex-end;
+      gap: 24px;
     }
 
-    .section-kicker {
-      color: var(--primary);
-      font-size: 14px;
-      font-weight: 800;
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--purple-dark);
+      font-weight: 950;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      font-size: 13px;
       margin-bottom: 8px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 8px;
+      height: 28px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--purple), var(--pink));
     }
 
     .section-title {
-      font-size: clamp(28px, 3.6vw, 44px);
-      line-height: 1.18;
-      font-weight: 900;
-      margin-bottom: 8px;
+      font-size: clamp(34px, 4.2vw, 58px);
+      line-height: 1.12;
+      letter-spacing: -1.6px;
+      font-weight: 950;
+      color: #090611;
     }
 
-    .section-desc {
-      color: var(--text-light);
-      max-width: 640px;
+    .section-note {
+      max-width: 460px;
+      color: var(--gray);
+      font-size: 15px;
     }
 
-    .card {
-      background: var(--card);
-      border: 1px solid rgba(124, 77, 255, 0.09);
-      backdrop-filter: blur(14px);
+    .glass-card {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(124, 60, 255, 0.11);
       border-radius: var(--radius-xl);
       box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
     }
 
     /* 关于我 */
-    .about-grid {
+    .about-layout {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.15fr 0.85fr;
       gap: 22px;
     }
 
-    .about-main {
-      padding: 28px;
+    .about-text {
+      padding: 34px;
     }
 
-    .about-main p {
-      color: var(--text-light);
+    .about-text h3 {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .about-text p {
+      color: var(--gray);
+      margin-bottom: 16px;
       font-size: 16px;
     }
 
-    .quick-facts {
+    .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
 
-    .fact {
-      padding: 22px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.78);
-      border: 1px solid rgba(124,77,255,0.09);
-      box-shadow: 0 14px 30px rgba(90,56,168,0.06);
+    .info-card {
+      padding: 24px;
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(124, 60, 255, 0.10);
+      box-shadow: var(--shadow-soft);
     }
 
-    .fact small {
+    .info-card span {
       display: block;
-      color: var(--text-light);
+      color: var(--gray);
+      font-size: 13px;
       margin-bottom: 8px;
     }
 
-    .fact strong {
+    .info-card strong {
       display: block;
-      font-size: 20px;
+      font-size: 21px;
       color: var(--text);
     }
 
-    /* 教育 */
-    .timeline {
-      position: relative;
-      padding-left: 24px;
+    /* 能力矩阵 */
+    .matrix {
+      padding: 34px;
+      margin-top: 22px;
     }
 
-    .timeline::before {
-      content: "";
-      position: absolute;
-      top: 4px;
-      bottom: 4px;
-      left: 8px;
-      width: 2px;
-      background: linear-gradient(180deg, #7c4dff, #d4c1ff);
+    .matrix-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 26px;
     }
 
-    .timeline-item {
-      position: relative;
-      padding: 0 0 22px 24px;
+    .matrix-top h3 {
+      font-size: 30px;
     }
 
-    .timeline-item::before {
-      content: "";
-      position: absolute;
-      left: -1px;
-      top: 6px;
-      width: 18px;
-      height: 18px;
+    .level-badge {
+      background: #ffe3f6;
+      color: #8b3edb;
+      padding: 7px 13px;
+      border-radius: 999px;
+      font-weight: 950;
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .round-score {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at center, #fff 0 50%, transparent 51%),
+        conic-gradient(var(--purple) 0 88%, #eee7ff 88% 100%);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 40px rgba(124, 60, 255, 0.16);
+      margin: 0 auto;
+    }
+
+    .round-score div {
+      width: 108px;
+      height: 108px;
       border-radius: 50%;
       background: #fff;
-      border: 4px solid #8d66ff;
-      box-shadow: 0 0 0 6px rgba(124,77,255,0.10);
-    }
-
-    .timeline-card {
-      padding: 24px 24px 20px;
-    }
-
-    .timeline-time {
-      display: inline-block;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary-deep);
-      font-weight: 700;
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-
-    .timeline-card h3 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    .timeline-card p {
-      color: var(--text-light);
-    }
-
-    /* 荣誉 */
-    .honor-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      place-items: center;
+      text-align: center;
+      color: var(--gray);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .round-score strong {
+      display: block;
+      font-size: 34px;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .bars {
+      display: grid;
       gap: 18px;
     }
 
-    .honor-card {
-      padding: 24px;
-    }
-
-    .honor-card h3 {
-      font-size: 18px;
-      margin-bottom: 14px;
-    }
-
-    .honor-list {
-      list-style: none;
+    .bar-row {
       display: grid;
-      gap: 12px;
+      grid-template-columns: 110px 1fr 42px;
+      align-items: center;
+      gap: 14px;
+      color: var(--text);
+      font-weight: 850;
     }
 
-    .honor-list li {
-      color: var(--text-light);
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(124,77,255,0.05);
-      border: 1px solid rgba(124,77,255,0.08);
+    .bar {
+      height: 10px;
+      border-radius: 999px;
+      background: #eee8ff;
+      overflow: hidden;
     }
 
-    /* 项目 */
-    .project-grid {
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--purple), #c09cff);
+    }
+
+    .bar-num {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* 教育 */
+    .edu-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 18px;
     }
 
-    .project-card {
-      padding: 26px;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .project-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 22px 38px rgba(90, 56, 168, 0.13);
-    }
-
-    .project-tag {
-      display: inline-block;
-      padding: 7px 12px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary-deep);
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 14px;
-    }
-
-    .project-card h3 {
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .project-card p {
-      color: var(--text-light);
-      font-size: 15px;
-    }
-
-    /* 技能 */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 18px;
-    }
-
-    .skills-card,
-    .contact-card {
-      padding: 28px;
-    }
-
-    .skill-group + .skill-group {
-      margin-top: 22px;
-    }
-
-    .skill-group h3 {
-      font-size: 18px;
-      margin-bottom: 12px;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .chip {
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(124,77,255,0.08);
-      color: #5a4b81;
-      border: 1px solid rgba(124,77,255,0.10);
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    /* 联系 */
-    .contact-card {
+    .edu-card {
+      padding: 30px;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(135deg, #fff 0%, #faf7ff 100%);
     }
 
-    .contact-card::after {
+    .edu-card::after {
       content: "";
       position: absolute;
       width: 180px;
       height: 180px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(124,77,255,0.18), transparent 68%);
-      right: -40px;
-      bottom: -30px;
+      right: -80px;
+      top: -70px;
+      background: rgba(124, 60, 255, 0.10);
     }
 
-    .contact-item {
-      margin-bottom: 14px;
-      color: var(--text-light);
+    .time {
+      display: inline-flex;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--purple-soft);
+      color: var(--purple-dark);
+      font-weight: 950;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    .edu-card h3 {
       position: relative;
-      z-index: 2;
+      z-index: 1;
+      font-size: 24px;
+      margin-bottom: 8px;
     }
 
-    .contact-item strong {
-      color: var(--text);
+    .edu-card p {
+      position: relative;
+      z-index: 1;
+      color: var(--gray);
     }
 
-    /* footer */
-    .footer {
-      padding: 26px 0 42px;
-      text-align: center;
-      color: var(--text-light);
+    /* 荣誉 */
+    .honor-board {
+      padding: 34px;
+    }
+
+    .honor-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .honor-column {
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(124, 60, 255, 0.10);
+      border-radius: 26px;
+      padding: 22px;
+    }
+
+    .honor-column h3 {
+      font-size: 22px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .honor-column h3 span {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--purple-soft);
+      color: var(--purple-dark);
+      font-size: 16px;
+    }
+
+    .honor-column ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .honor-column li {
+      padding: 12px 13px;
+      border-radius: 16px;
+      background: rgba(248, 244, 255, 0.78);
+      color: #5d5275;
       font-size: 14px;
+      border: 1px solid rgba(124, 60, 255, 0.07);
+    }
+
+    /* 项目经历 */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .project-card {
+      min-height: 300px;
+      padding: 24px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(124, 60, 255, 0.11);
+      box-shadow: var(--shadow-soft);
+      transition: 0.28s ease;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 70px rgba(91, 52, 168, 0.16);
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(124, 60, 255, 0.16), transparent 34%),
+        radial-gradient(circle at bottom left, rgba(243, 215, 255, 0.22), transparent 30%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .project-card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--purple), #c4a1ff);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 24px;
+      margin-bottom: 22px;
+      box-shadow: 0 16px 28px rgba(124, 60, 255, 0.22);
+    }
+
+    .project-card h3 {
+      font-size: 21px;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .project-card p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    .project-more {
+      margin-top: 22px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--purple-dark);
+      font-weight: 950;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      font-size: 14px;
+      font-family: inherit;
+      align-self: flex-start;
+    }
+
+    /* 技能 */
+    .skill-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+    }
+
+    .skill-card {
+      padding: 32px;
+    }
+
+    .skill-card h3 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .chip {
+      padding: 11px 15px;
+      border-radius: 999px;
+      background: rgba(124, 60, 255, 0.08);
+      color: #5e5080;
+      font-weight: 850;
+      border: 1px solid rgba(124, 60, 255, 0.10);
+    }
+
+    .quote-card {
+      padding: 32px;
+      background:
+        linear-gradient(135deg, rgba(124, 60, 255, 0.94), rgba(166, 117, 255, 0.88)),
+        var(--purple);
+      color: white;
+      border-radius: var(--radius-xl);
+      box-shadow: 0 28px 80px rgba(124, 60, 255, 0.24);
+    }
+
+    .quote-card h3 {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    .quote-card p {
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 16px;
+    }
+
+    /* 联系 */
+    .contact {
+      padding: 78px 0 86px;
+    }
+
+    .contact-panel {
+      padding: 44px;
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at top right, rgba(243, 215, 255, 0.55), transparent 32%),
+        linear-gradient(135deg, rgba(255,255,255,0.86), rgba(248,244,255,0.78));
+      border: 1px solid rgba(124, 60, 255, 0.12);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(34px, 4vw, 56px);
+      line-height: 1.12;
+      letter-spacing: -1.5px;
+      margin-bottom: 14px;
+    }
+
+    .contact-panel p {
+      color: var(--gray);
+      margin-bottom: 18px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-list span,
+    .contact-list a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid rgba(124, 60, 255, 0.10);
+      color: #5d5275;
+      font-weight: 800;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--gray);
+      font-size: 14px;
+      padding: 0 0 34px;
+    }
+
+    /* 弹窗 */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 14, 29, 0.42);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 22px;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      width: min(920px, 96vw);
+      max-height: 88vh;
+      overflow: auto;
+      border-radius: 36px;
+      background: rgba(255,255,255,0.92);
+      border: 1px solid rgba(124,60,255,0.14);
+      box-shadow: 0 30px 100px rgba(20,17,31,0.24);
+      padding: 34px;
+      animation: pop 0.25s ease;
+    }
+
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .modal-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .modal-title h3 {
+      font-size: 34px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .modal-title p {
+      color: var(--gray);
+    }
+
+    .close {
+      border: none;
+      background: var(--black);
+      color: white;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 900;
+      cursor: pointer;
+      font-family: inherit;
+      flex-shrink: 0;
+    }
+
+    .modal-boxes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .modal-box {
+      border-radius: 24px;
+      background: var(--purple-light);
+      border: 1px solid rgba(124,60,255,0.10);
+      padding: 22px;
+    }
+
+    .modal-box h4 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      color: var(--purple-dark);
+    }
+
+    .modal-box p {
+      color: var(--gray);
+      font-size: 15px;
     }
 
     /* 响应式 */
     @media (max-width: 1080px) {
       .hero-grid,
-      .about-grid,
-      .skills-grid,
-      .honor-grid,
-      .project-grid {
+      .about-layout,
+      .skill-layout,
+      .contact-panel {
         grid-template-columns: 1fr;
       }
 
-      .float-1,
-      .float-2 {
-        position: static;
-        margin-top: 14px;
+      .hero-visual {
+        min-height: auto;
       }
 
-      .hero-right {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
+      .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .honor-tabs {
+        grid-template-columns: 1fr;
+      }
+
+      .matrix-grid {
+        grid-template-columns: 1fr;
       }
     }
 
-    @media (max-width: 820px) {
-      .navbar {
+    @media (max-width: 780px) {
+      .nav {
+        height: auto;
         border-radius: 28px;
+        padding: 14px;
         align-items: flex-start;
         flex-direction: column;
       }
 
       .nav-links {
         width: 100%;
-      }
-
-      .hero {
-        padding-top: 44px;
-      }
-
-      .hero-title {
-        font-size: 46px;
-      }
-
-      .quick-facts {
-        grid-template-columns: 1fr;
-      }
-
-      .section {
-        padding: 34px 0;
-      }
-    }
-
-    @media (max-width: 560px) {
-      .brand-text {
-        display: none;
+        flex-wrap: wrap;
       }
 
       .nav-links a {
         font-size: 14px;
-        padding: 9px 13px;
+        padding: 9px 12px;
       }
 
-      .hero-title {
-        font-size: 38px;
+      .hero {
+        padding-top: 48px;
       }
 
-      .hero-subtitle {
-        font-size: 18px;
+      .hero h1 {
+        letter-spacing: -1.5px;
       }
 
-      .hero-desc {
-        font-size: 15px;
+      .float-a,
+      .float-b,
+      .float-c {
+        position: static;
+        margin-top: 12px;
       }
 
-      .btn {
+      .portrait-shell {
+        transform: none;
+      }
+
+      .info-grid,
+      .edu-grid,
+      .project-grid,
+      .modal-boxes {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .logo-text {
+        display: none;
+      }
+
+      .hero-actions .btn {
         width: 100%;
       }
 
-      .about-main,
-      .honor-card,
-      .project-card,
-      .skills-card,
-      .contact-card,
-      .timeline-card {
-        padding: 22px;
+      .about-text,
+      .matrix,
+      .honor-board,
+      .skill-card,
+      .quote-card,
+      .contact-panel,
+      .modal-content {
+        padding: 24px;
+      }
+
+      .bar-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .round-score {
+        width: 132px;
+        height: 132px;
       }
     }
   </style>
 </head>
-<body>
-  <div class="blur-ball ball-1"></div>
-  <div class="blur-ball ball-2"></div>
-  <div class="blur-ball ball-3"></div>
 
-  <div class="navbar-wrap">
-    <nav class="navbar">
-      <a href="#top" class="brand">
-        <div class="brand-icon">朱</div>
-        <div class="brand-text">
+<body>
+  <div class="decor decor-1"></div>
+  <div class="decor decor-2"></div>
+  <div class="decor decor-3"></div>
+
+  <header class="nav-wrap">
+    <nav class="nav">
+      <a class="logo" href="#top">
+        <div class="logo-mark">朱</div>
+        <div class="logo-text">
           朱琳
-          <small>Personal Website</small>
+          <span>Industrial Design Portfolio</span>
         </div>
       </a>
 
       <div class="nav-links">
-        <a href="#about">关于我</a>
+        <a href="#about" class="active">关于我</a>
         <a href="#education">教育背景</a>
         <a href="#honor">荣誉奖项</a>
         <a href="#project">项目经历</a>
         <a href="#skills">技能特长</a>
-        <a href="#contact" class="nav-btn">联系我</a>
+        <a href="#contact">联系我</a>
       </div>
     </nav>
-  </div>
+  </header>
 
   <main id="top">
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-left">
-          <div class="eyebrow">
-            <span class="eyebrow-dot"></span>
-            工业设计工程 · 个人网站
+        <div class="hero-copy">
+          <div class="hello">
+            <span class="hello-dot"></span>
+            广东工业大学 · 工业设计工程
           </div>
 
-          <h1 class="hero-title">
+          <h1>
             Hi，<br />
-            我是<span class="highlight">朱琳</span>
+            我是 <span class="gradient-text">朱琳</span>
           </h1>
 
-          <div class="hero-subtitle">
-            工业设计 / 视觉表达 / 数字媒体创意
+          <div class="hero-role">
+            Industrial Design / Visual Design / Digital Creativity
           </div>
 
           <p class="hero-desc">
-            我目前就读于广东工业大学工业设计工程专业，具有工业设计、视觉表达与项目实践经验。
-            我热爱设计，也喜欢把创意、审美与实际需求结合起来，希望做出更有温度、更有表达力的作品。
+            我是一名工业设计工程专业学生，关注产品设计、视觉表达与数字媒体创意。
+            我希望用设计把复杂的问题变得更清晰，把真实需求转化为有温度、有体验感的作品。
           </p>
 
           <div class="hero-actions">
-            <a href="#project" class="btn btn-primary">查看项目经历</a>
-            <a href="#contact" class="btn btn-outline">联系我</a>
+            <a href="#project" class="btn btn-dark">查看项目经历 →</a>
+            <a href="#honor" class="btn btn-light">查看荣誉奖项</a>
+            <a href="#contact" class="btn btn-purple">联系我</a>
           </div>
 
-          <div class="hero-tags">
-            <span class="tag">广东工业大学硕士在读</span>
-            <span class="tag">南通大学工业设计本科</span>
-            <span class="tag">多项国赛 / 省赛奖项</span>
-            <span class="tag">产品设计与视觉表达</span>
+          <div class="mini-tags">
+            <span>工业设计工程硕士在读</span>
+            <span>产品建模与渲染</span>
+            <span>视觉表达</span>
+            <span>多项设计竞赛获奖</span>
           </div>
         </div>
 
-        <div class="hero-right">
-          <div class="photo-card">
-            <div class="photo-frame">
+        <div class="hero-visual">
+          <div class="portrait-shell">
+            <div class="portrait-glow"></div>
+            <div class="portrait-inner">
               <img src="证件照.jpg" alt="朱琳个人照片" />
             </div>
           </div>
 
-          <div class="float-card float-1">
-            <strong>教育经历</strong>
-            <span>本硕均为工业设计相关专业</span>
+          <div class="floating float-a">
+            <strong>2025 - 至今</strong>
+            <span>广东工业大学 · 工业设计工程</span>
           </div>
 
-          <div class="float-card float-2">
+          <div class="floating float-b">
             <strong>设计方向</strong>
-            <span>产品设计 / 数字媒体 / 视觉创意</span>
+            <span>产品设计 / 视觉创意 / 数字媒体</span>
+          </div>
+
+          <div class="floating float-c">
+            <div class="score">A+</div>
+            <div>
+              <strong>Portfolio</strong>
+              <span>个人网站 · 作品集展示</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="block" id="about">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">About Me</div>
+            <div class="kicker">About Me</div>
             <h2 class="section-title">关于我</h2>
-            <p class="section-desc">
-              一个更像“个人网站”的自我介绍，而不是简历列表。
-            </p>
           </div>
+          <p class="section-note">
+            这里不是照搬简历，而是把你的经历整理成更适合个人网站的表达。
+          </p>
         </div>
 
-        <div class="about-grid">
-          <div class="card about-main">
+        <div class="about-layout">
+          <div class="glass-card about-text">
+            <h3>我关注设计，也关注设计背后的真实需求。</h3>
             <p>
-              我叫朱琳，23岁，四川成都人，现为广东工业大学工业设计工程专业硕士研究生。
-              本科毕业于南通大学艺术学院工业设计专业。学习与实践过程中，我持续关注产品设计、
-              视觉表达、创意方法与数字媒体方向。
+              我叫朱琳，23岁，四川成都人，目前就读于广东工业大学工业设计工程专业。
+              本科毕业于南通大学艺术学院工业设计专业。
             </p>
-            <br />
+            <p>
+              在学习与实践过程中，我持续关注产品设计、视觉表达、数字媒体创意与设计落地。
+              我喜欢把创意、审美与用户需求结合起来，通过草图、建模、渲染和方案表达，让想法变得更清晰、更完整。
+            </p>
             <p>
               我熟悉 Rhino、KeyShot、Illustrator、Photoshop、SolidWorks、Figma、AutoCAD 等工具，
-              具备手绘表达、产品建模与设计方案呈现能力。除了专业学习，我也积极参加竞赛、项目与团队工作，
-              希望在实践中不断提升自己的设计思维和落地能力。
+              具备手绘表达、产品建模、方案呈现与团队协作能力。
             </p>
           </div>
 
-          <div class="quick-facts">
-            <div class="fact">
-              <small>年龄</small>
-              <strong>23 岁</strong>
+          <div class="info-grid">
+            <div class="info-card">
+              <span>年龄</span>
+              <strong>23岁</strong>
             </div>
-            <div class="fact">
-              <small>民族</small>
+            <div class="info-card">
+              <span>民族</span>
               <strong>汉族</strong>
             </div>
-            <div class="fact">
-              <small>籍贯</small>
-              <strong>四川省成都市</strong>
+            <div class="info-card">
+              <span>籍贯</span>
+              <strong>四川成都</strong>
             </div>
-            <div class="fact">
-              <small>政治面貌</small>
+            <div class="info-card">
+              <span>政治面貌</span>
               <strong>团员</strong>
             </div>
           </div>
         </div>
+
+        <div class="glass-card matrix">
+          <div class="matrix-top">
+            <h3>综合能力矩阵</h3>
+            <span class="level-badge">Design Profile</span>
+          </div>
+
+          <div class="matrix-grid">
+            <div class="round-score">
+              <div>
+                <strong>92</strong>
+                综合表现
+              </div>
+            </div>
+
+            <div class="bars">
+              <div class="bar-row">
+                <span>产品设计</span>
+                <div class="bar"><span style="width: 94%;"></span></div>
+                <span class="bar-num">94</span>
+              </div>
+
+              <div class="bar-row">
+                <span>视觉表达</span>
+                <div class="bar"><span style="width: 92%;"></span></div>
+                <span class="bar-num">92</span>
+              </div>
+
+              <div class="bar-row">
+                <span>建模渲染</span>
+                <div class="bar"><span style="width: 90%;"></span></div>
+                <span class="bar-num">90</span>
+              </div>
+
+              <div class="bar-row">
+                <span>项目协作</span>
+                <div class="bar"><span style="width: 88%;"></span></div>
+                <span class="bar-num">88</span>
+              </div>
+
+              <div class="bar-row">
+                <span>创意思维</span>
+                <div class="bar"><span style="width: 95%;"></span></div>
+                <span class="bar-num">95</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="education">
+    <section class="block" id="education">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Education</div>
+            <div class="kicker">Education</div>
             <h2 class="section-title">教育背景</h2>
-            <p class="section-desc">
-              从本科工业设计到硕士工业设计工程，持续围绕设计与创意展开学习和实践。
-            </p>
           </div>
+          <p class="section-note">
+            从本科工业设计到硕士工业设计工程，形成了较完整的专业学习路径。
+          </p>
         </div>
 
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="card timeline-card">
-              <span class="timeline-time">2025 - 至今</span>
-              <h3>广东工业大学 · 工业设计工程专业</h3>
-              <p>
-                硕士阶段学习，现任班级学习委员，持续进行专业学习与综合能力提升。
-              </p>
-            </div>
+        <div class="edu-grid">
+          <div class="glass-card edu-card">
+            <span class="time">2025 - 至今</span>
+            <h3>广东工业大学 · 工业设计工程专业</h3>
+            <p>硕士教育经历，现任班级学习委员，持续提升设计研究、产品创新与综合表达能力。</p>
           </div>
 
-          <div class="timeline-item">
-            <div class="card timeline-card">
-              <span class="timeline-time">2021 - 2025</span>
-              <h3>南通大学艺术学院 · 工业设计专业</h3>
-              <p>
-                本科阶段系统学习工业设计相关课程，参与多项竞赛与项目实践。
-              </p>
-            </div>
+          <div class="glass-card edu-card">
+            <span class="time">2021 - 2025</span>
+            <h3>南通大学艺术学院 · 工业设计专业</h3>
+            <p>本科教育经历，系统学习工业设计相关课程，参与竞赛、项目与作品展示。</p>
           </div>
 
-          <div class="timeline-item">
-            <div class="card timeline-card">
-              <span class="timeline-time">2022 - 2025</span>
-              <h3>班级学习委员</h3>
-              <p>
-                负责学习事务协助与沟通协调，增强了组织与团队协作能力。
-              </p>
-            </div>
+          <div class="glass-card edu-card">
+            <span class="time">2022 - 2025</span>
+            <h3>班级学习委员</h3>
+            <p>参与班级学习事务沟通与组织，提升了沟通协调、信息整理与团队协作能力。</p>
           </div>
 
-          <div class="timeline-item">
-            <div class="card timeline-card">
-              <span class="timeline-time">2022 - 2024</span>
-              <h3>院红十字会学生干部</h3>
-              <p>
-                曾任实践部部长、活动部副部长，积累活动组织与执行经验。
-              </p>
-            </div>
+          <div class="glass-card edu-card">
+            <span class="time">2022 - 2024</span>
+            <h3>院红十字会学生干部</h3>
+            <p>曾任实践部部长、活动部副部长，参与活动策划、组织执行与团队管理。</p>
           </div>
 
-          <div class="timeline-item">
-            <div class="card timeline-card">
-              <span class="timeline-time">2023</span>
-              <h3>南通大学艺术学院入党积极分子</h3>
-              <p>
-                积极参与学习与实践活动，不断提升自我综合素养。
-              </p>
-            </div>
+          <div class="glass-card edu-card">
+            <span class="time">2023</span>
+            <h3>南通大学艺术学院入党积极分子</h3>
+            <p>积极参与学院学习与实践活动，持续提升综合素养与责任意识。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="honor">
+    <section class="block" id="honor">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Honors</div>
+            <div class="kicker">Honors</div>
             <h2 class="section-title">荣誉奖项</h2>
-            <p class="section-desc">
-              将简历里的奖项信息做成更清晰、更有设计感的展示方式。
-            </p>
           </div>
+          <p class="section-note">
+            用分组方式展示奖项信息，阅读起来更清楚，也更像作品集网站。
+          </p>
         </div>
 
-        <div class="honor-grid">
-          <div class="card honor-card">
-            <h3>国家级奖项</h3>
-            <ul class="honor-list">
-              <li>2025 全国大学生数字媒体科技作品创意竞赛全国三等奖</li>
-              <li>2024 全国大学生工业设计大赛总决赛区入围奖</li>
-              <li>2024 东方设计奖全国高校创新设计大赛全国一等奖</li>
-              <li>2024 东方设计奖全国高校创新设计大赛全国二等奖</li>
-              <li>2022 中国包装大赛优秀奖</li>
-            </ul>
-          </div>
+        <div class="glass-card honor-board">
+          <div class="honor-tabs">
+            <div class="honor-column">
+              <h3><span>国</span>国家级奖项</h3>
+              <ul>
+                <li>2025 全国大学生数字媒体科技作品创意竞赛全国三等奖</li>
+                <li>2024 全国大学生工业设计大赛总决赛区入围奖</li>
+                <li>2024 东方设计奖全国高校创新设计大赛全国一等奖</li>
+                <li>2024 东方设计奖全国高校创新设计大赛全国二等奖</li>
+                <li>2022 中国包装大赛优秀奖</li>
+              </ul>
+            </div>
 
-          <div class="card honor-card">
-            <h3>省赛 / 赛区奖项</h3>
-            <ul class="honor-list">
-              <li>2025 全国大学生数字媒体科技作品创意竞赛省三等奖</li>
-              <li>2025 蓝桥杯视觉艺术设计比赛江苏省三等奖</li>
-              <li>2024 全国大学生工业设计大赛江苏赛区特等奖</li>
-              <li>2024 米兰设计周中国高校作品展江苏赛区二等奖</li>
-              <li>2024 中国好创意设计大赛江苏赛区一等奖</li>
-              <li>2024 中国好创意设计大赛江苏赛区三等奖</li>
-              <li>2024 未来设计师数字艺术设计大赛江苏赛区二等奖</li>
-              <li>2024 东方设计奖全国高校创新设计大赛江苏省三等奖</li>
-            </ul>
-          </div>
+            <div class="honor-column">
+              <h3><span>省</span>省赛 / 赛区奖项</h3>
+              <ul>
+                <li>2025 全国大学生数字媒体科技作品创意竞赛省三等奖</li>
+                <li>2025 蓝桥杯视觉艺术设计比赛江苏省三等奖</li>
+                <li>2024 全国大学生工业设计大赛江苏赛区特等奖</li>
+                <li>2024 米兰设计周中国高校作品展江苏赛区二等奖</li>
+                <li>2024 中国好创意设计大赛江苏赛区一等奖</li>
+                <li>2024 中国好创意设计大赛江苏赛区三等奖</li>
+                <li>2024 未来设计师数字艺术设计大赛江苏赛区二等奖</li>
+                <li>2024 东方设计奖全国高校创新设计大赛江苏省三等奖</li>
+              </ul>
+            </div>
 
-          <div class="card honor-card">
-            <h3>校级 / 其他成果</h3>
-            <ul class="honor-list">
-              <li>2023 校级二等奖学金</li>
-              <li>2024 校级三等奖学金</li>
-              <li>2023 作品入展南通美术馆</li>
-            </ul>
+            <div class="honor-column">
+              <h3><span>校</span>校级 / 展览</h3>
+              <ul>
+                <li>2023 校级二等奖学金</li>
+                <li>2024 校级三等奖学金</li>
+                <li>2023 作品入展南通美术馆</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="project">
+    <section class="block" id="project">
       <div class="container">
         <div class="section-head">
           <div>
-            <div class="section-kicker">Projects</div>
+            <div class="kicker">Projects</div>
             <h2 class="section-title">项目经历</h2>
-            <p class="section-desc">
-              用卡片方式展示项目，比单纯写一段文字更像作品网站。
-            </p>
           </div>
+          <p class="section-note">
+            每个项目都可以点击查看详情，效果会更像你发的参考图里的弹窗展示。
+          </p>
         </div>
 
         <div class="project-grid">
-          <div class="card project-card">
-            <span class="project-tag">2023.04</span>
-            <h3>“九号奇妙出行”征集活动</h3>
-            <p>
-              参与“九号”品牌“奇妙出行”征集活动，为其设计电动滑板车及摩托车。
-              作品授权展示于九号公司 2023 新品发布会，后续作品入展南通美术馆。
-            </p>
+          <article class="project-card">
+            <div>
+              <div class="project-icon">🛵</div>
+              <h3>“九号奇妙出行”征集活动</h3>
+              <p>电动滑板车及摩托车设计，作品授权展示于九号公司新品发布会。</p>
+            </div>
+            <button class="project-more" onclick="openModal('modal1')">查看详情 ↗</button>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-icon">🏋️</div>
+              <h3>南通大学典石工作室</h3>
+              <p>与品牌合作参与哑铃架、杠铃杆插座等产品设计。</p>
+            </div>
+            <button class="project-more" onclick="openModal('modal2')">查看详情 ↗</button>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-icon">🌊</div>
+              <h3>南通沿海沿江生态景观项目</h3>
+              <p>为南通风景道设计打卡地标，参与城市文旅场景设计。</p>
+            </div>
+            <button class="project-more" onclick="openModal('modal3')">查看详情 ↗</button>
+          </article>
+
+          <article class="project-card">
+            <div>
+              <div class="project-icon">🏛️</div>
+              <h3>教育部产学合作协同育人项目</h3>
+              <p>参与光影艺术展策划与实施，负责博物馆文创产品设计。</p>
+            </div>
+            <button class="project-more" onclick="openModal('modal4')">查看详情 ↗</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="kicker">Skills</div>
+            <h2 class="section-title">技能特长</h2>
+          </div>
+          <p class="section-note">
+            将软件能力、证书和自我评价做成网站化展示。
+          </p>
+        </div>
+
+        <div class="skill-layout">
+          <div class="glass-card skill-card">
+            <h3>专业工具</h3>
+            <div class="chips">
+              <span class="chip">Rhino</span>
+              <span class="chip">KeyShot</span>
+              <span class="chip">Illustrator</span>
+              <span class="chip">Photoshop</span>
+              <span class="chip">SolidWorks</span>
+              <span class="chip">Figma</span>
+              <span class="chip">AutoCAD</span>
+              <span class="chip">手绘表达</span>
+              <span class="chip">产品建模</span>
+              <span class="chip">方案呈现</span>
+            </div>
+
+            <br /><br />
+
+            <h3>技能证书</h3>
+            <div class="chips">
+              <span class="chip">英语 CET-4</span>
+              <span class="chip">英语 CET-6</span>
+              <span class="chip">普通话二级甲等</span>
+            </div>
           </div>
 
-          <div class="card project-card">
-            <span class="project-tag">2023.06 - 2024.03</span>
-            <h3>南通大学典石工作室</h3>
+          <div class="quote-card">
+            <h3>自我评价</h3>
             <p>
-              加入南通大学典石工作室，与“摩登体育”“瑞升”等品牌合作，
-              参与哑铃架、杠铃杆插座等产品设计。
-            </p>
-          </div>
-
-          <div class="card project-card">
-            <span class="project-tag">2023.06 - 2023.09</span>
-            <h3>“南通沿海沿江生态景观”项目</h3>
-            <p>
-              参与南通文旅局“南通沿江沿海生态景观”项目，
-              为南通风景道设计打卡地标方案。
-            </p>
-          </div>
-
-          <div class="card project-card">
-            <span class="project-tag">2023.11 - 2023.12</span>
-            <h3>教育部产学合作协同育人项目</h3>
-            <p>
-              参与“基于增强现实交互技术的光影艺术展策划与实施”项目，
-              负责博物馆内文创产品相关设计。
+              热爱工业设计专业，不断充实自己的专业知识，能够熟练操作 Rhino、KeyShot 等建模渲染软件。
+              具备较强的手绘能力，能够快速表达设计思路。做事认真细致，有团队意识，也愿意不断挑战自我。
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="skills">
+    <section class="contact" id="contact">
       <div class="container">
-        <div class="section-head">
+        <div class="contact-panel">
           <div>
-            <div class="section-kicker">Skills</div>
-            <h2 class="section-title">技能特长</h2>
-            <p class="section-desc">
-              软件能力、证书和自我评价整合在一起，更适合个人网站展示。
+            <h2>期待与你交流设计、创意与项目合作。</h2>
+            <p>
+              如果你对我的作品、设计经历或项目合作感兴趣，可以通过邮箱联系我。
             </p>
-          </div>
-        </div>
 
-        <div class="skills-grid">
-          <div class="card skills-card">
-            <div class="skill-group">
-              <h3>专业技能</h3>
-              <div class="chips">
-                <span class="chip">Rhino</span>
-                <span class="chip">KeyShot</span>
-                <span class="chip">Illustrator</span>
-                <span class="chip">Photoshop</span>
-                <span class="chip">SolidWorks</span>
-                <span class="chip">Figma</span>
-                <span class="chip">AutoCAD</span>
-                <span class="chip">手绘表达</span>
-                <span class="chip">产品建模</span>
-                <span class="chip">方案呈现</span>
-              </div>
-            </div>
-
-            <div class="skill-group">
-              <h3>技能证书</h3>
-              <div class="chips">
-                <span class="chip">英语 CET-4</span>
-                <span class="chip">英语 CET-6</span>
-                <span class="chip">普通话二级甲等</span>
-              </div>
-            </div>
-
-            <div class="skill-group">
-              <h3>自我评价</h3>
-              <p style="color: var(--text-light);">
-                热爱工业设计专业，不断充实自己的专业知识，熟练使用相关建模与渲染软件，
-                具备较强的手绘能力，能够较快表达设计思路。做事认真细致，具有团队意识，
-                喜欢挑战自我。
-              </p>
+            <div class="contact-list">
+              <a href="mailto:2651281672@qq.com">邮箱：2651281672@qq.com</a>
+              <span>手机：139****3509</span>
+              <span>四川成都 / 广东</span>
             </div>
           </div>
 
-          <div class="card contact-card" id="contact">
-            <div class="section-kicker">Contact</div>
-            <h2 class="section-title" style="font-size: 32px; margin-bottom: 12px;">联系我</h2>
-            <p class="contact-item">
-              如果你对我的设计作品、学习经历或项目合作感兴趣，欢迎联系我。
-            </p>
-            <p class="contact-item"><strong>邮箱：</strong>2651281672@qq.com</p>
-            <p class="contact-item"><strong>手机：</strong>139****3509</p>
-            <p class="contact-item"><strong>所在地：</strong>四川成都 / 广东</p>
-          </div>
+          <a href="mailto:2651281672@qq.com" class="btn btn-purple">发送邮件 →</a>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      © 2026 朱琳个人网站 · Designed with purple style
+      © 2026 朱琳个人网站 · Industrial Design Portfolio
     </footer>
   </main>
+
+  <div class="modal" id="modal1">
+    <div class="modal-content">
+      <div class="modal-top">
+        <div class="modal-title">
+          <h3>“九号奇妙出行”征集活动</h3>
+          <p>2023.04 · 品牌征集 / 出行产品设计</p>
+        </div>
+        <button class="close" onclick="closeModal('modal1')">关闭</button>
+      </div>
+
+      <div class="modal-boxes">
+        <div class="modal-box">
+          <h4>项目内容</h4>
+          <p>
+            参与“九号”品牌“奇妙出行”征集活动，为其设计电动滑板车及摩托车。
+          </p>
+        </div>
+        <div class="modal-box">
+          <h4>项目成果</h4>
+          <p>
+            作品授权展示于九号公司 2023 新品发布会，后续作品入展南通美术馆。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal2">
+    <div class="modal-content">
+      <div class="modal-top">
+        <div class="modal-title">
+          <h3>南通大学典石工作室</h3>
+          <p>2023.06 - 2024.03 · 产品设计 / 品牌合作</p>
+        </div>
+        <button class="close" onclick="closeModal('modal2')">关闭</button>
+      </div>
+
+      <div class="modal-boxes">
+        <div class="modal-box">
+          <h4>项目内容</h4>
+          <p>
+            加入南通大学典石工作室，与“摩登体育”“瑞升”等品牌合作。
+          </p>
+        </div>
+        <div class="modal-box">
+          <h4>设计方向</h4>
+          <p>
+            参与哑铃架、杠铃杆插座等产品设计，进行造型、结构与使用场景思考。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal3">
+    <div class="modal-content">
+      <div class="modal-top">
+        <div class="modal-title">
+          <h3>“南通沿海沿江生态景观”项目</h3>
+          <p>2023.06 - 2023.09 · 文旅项目 / 景观打卡地标</p>
+        </div>
+        <button class="close" onclick="closeModal('modal3')">关闭</button>
+      </div>
+
+      <div class="modal-boxes">
+        <div class="modal-box">
+          <h4>项目内容</h4>
+          <p>
+            参与南通文旅局“南通沿江沿海生态景观”项目。
+          </p>
+        </div>
+        <div class="modal-box">
+          <h4>设计产出</h4>
+          <p>
+            为南通风景道设计打卡地标方案，结合城市文旅场景进行视觉与空间表达。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="modal4">
+    <div class="modal-content">
+      <div class="modal-top">
+        <div class="modal-title">
+          <h3>教育部产学合作协同育人项目</h3>
+          <p>2023.11 - 2023.12 · 光影艺术展 / 文创产品设计</p>
+        </div>
+        <button class="close" onclick="closeModal('modal4')">关闭</button>
+      </div>
+
+      <div class="modal-boxes">
+        <div class="modal-box">
+          <h4>项目内容</h4>
+          <p>
+            参与“基于增强现实交互技术的光影艺术展策划与实施”项目。
+          </p>
+        </div>
+        <div class="modal-box">
+          <h4>负责部分</h4>
+          <p>
+            负责博物馆内文创产品相关设计，结合展览主题进行创意转化。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".modal").forEach(function(modal) {
+      modal.addEventListener("click", function(event) {
+        if (event.target === modal) {
+          modal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      });
+    });
+
+    document.addEventListener("keydown", function(event) {
+      if (event.key === "Escape") {
+        document.querySelectorAll(".modal.active").forEach(function(modal) {
+          modal.classList.remove("active");
+        });
+        document.body.style.overflow = "";
+      }
+    });
+  </script>
 </body>
 </html>
